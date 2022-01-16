@@ -1,1 +1,1 @@
-# program_HEZ_dict
+# Sehaan's program: Hezhen Dictionary
