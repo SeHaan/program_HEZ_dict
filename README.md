@@ -1,8 +1,9 @@
 # Sehaan's program: Hezhen Dictionary
 
-|현재 버전|최종 수정일|
-|:-------:|:---------:|
-|ver. 1.0.0|2022년 1월 17일|
+|현재 버전|최종 수정일|수정 내용|
+|:-------:|:---------:|:-------|
+|ver. 1.0.0|2022년 1월 17일|initial commit|
+|ver. 1.1.0|2022년 1월 21일|검색 속도 향상(numpy, numba)|
 
 - Icon 출처: https://img.icons8.com/clouds/100/000000/note.png
 

@@ -1,5 +1,8 @@
+#%%
 import sys
+import numba
 import pandas as pd
+import numpy as np
 from PyQt5.QtWidgets import QMainWindow, QDesktopWidget, QListWidgetItem, QApplication, QMessageBox
 from PyQt5.QtGui import QIcon
 from source.function_encoding import encode_Lee
@@ -107,20 +110,20 @@ class MainApp(QMainWindow):
         if listLen == len(self.df['전사(변환)']): # entire 상태
             full_text = self.get_full_text(i_dx)
         else: # entire가 아닌 상태
-            new_list = []
+            new_list = np.array([])
             j = 0
+            
             while j < listLen:
                 listWord = self.centralWidget().children()[6].item(j).text()
                 new_list_ind = wordList.findword_exact(listWord, '0', 0)
-                new_list = new_list + new_list_ind
+                new_list = np.append(new_list, np.array(new_list_ind), axis=0)
 
                 if len(new_list_ind) != 1:
                     j += len(new_list_ind)
                 else:
                     j += 1
 
-            print(new_list)
-            full_text = self.get_full_text(new_list[i_dx])
+            full_text = self.get_full_text(int(new_list[i_dx]))
 
         # ================ 요주의 구간 끝 ================== #
         
